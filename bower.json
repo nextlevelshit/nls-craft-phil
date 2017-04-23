@@ -1,0 +1,19 @@
+{
+  "name": "nls-craft-phil-template",
+  "authors": [
+    "Michael Czechowski <mail@dailysh.it>"
+  ],
+  "directory": "assets/lib/",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

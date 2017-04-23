@@ -10,21 +10,50 @@
         <link rel="home"
             href="{{ siteUrl }}" />
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab:300,400"
-            rel="stylesheet">
-        {% includeCssFile "assets/style.css" %}
+            rel="stylesheet"> {% do view.registerCssFile("assets/css/main.css") %}
     </head>
 
     <body class="nls-phil-body">
         <header class="nls-phil-header">
-            <h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
-
-            <nav class="nls-phil-header-nav">
-                <ul class="nls-phil-header-nav-list">
-                    <li class="nls-phil-header-nav-list-item">
-                        <a href="#" class="nls-phil-header-nav-list-item-link">Navigation</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="collapse bg-inverse"
+                id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 py-4">
+                            <h4 class="text-white">About</h4>
+                            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact
+                                information.
+                            </p>
+                        </div>
+                        <div class="col-sm-4 py-4">
+                            <h4 class="text-white">Contact</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"
+                                        class="text-white">Follow on Twitter</a></li>
+                                <li><a href="#"
+                                        class="text-white">Like on Facebook</a></li>
+                                <li><a href="#"
+                                        class="text-white">Email me</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-inverse bg-inverse">
+                <div class="container d-flex justify-content-between">
+                    <a href="{{ siteUrl }}"
+                        class="navbar-brand">{{ siteName }}</a>
+                    <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarHeader"
+                        aria-controls="navbarHeader"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+               </button>
+                </div>
+            </div>
         </header>
 
         <main role="main">
@@ -33,13 +62,27 @@
 
         </main>
 
-        <footer class="nls-phil-footer">
-            Copyright 2017. All rights reserved • Built with <a href="http://craftcms.com">Craft</a>
+        <footer class="text-muted">
+            <div class="container">
+                <p class="float-right">
+                    <a href="#">Zurück zum Anfang</a>
+                </p>
+                <p>Diese Seite wurde mit freundlicher Unterstützung erstellt von Michael Czechowski - <a href="//dailysh.it" target="_blank">NEXT LEVEL SHIT - Webprogrammierung aus Stuttgart</a></p>
+                <p>Der Inhalt wird verwaltet von den jeweiligen Vertretern und Vertreterinnen der Fachgruppe für <a href="#">Öffentlichkeitsarbeit</a>.</p>
+            </div>
         </footer>
 
         <pre>
             {# {{ dump(entry) }} #}
         </pre>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+        <script src="assets/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 
 </html>

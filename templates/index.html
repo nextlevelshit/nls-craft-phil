@@ -2,16 +2,28 @@
 
 {% block content %}
 
+    {% set entry = craft.entries.section('index').first() %}
+
 	<main role="main">
 
-		{% paginate craft.entries.section('blog').limit(blogSettings.postsPerPage) as info, entries %}
+        {% include "partials/_jumbotron.html" %}
 
-		{% for entry in entries %}
-			{% include "partials/_entry_teaser.html" %}
-		{% endfor %}
 
-		{% include "partials/_pagination.html" %}
+        <div class="album text-muted">
+            <div class="container">
+                <div class="row">
 
+                    {% paginate craft.entries.section('blog').limit(6) as info, entries %}
+
+                    {% for entry in entries %}
+                        {% include "partials/_entry_teaser.html" %}
+                    {% endfor %}
+
+                    {% include "partials/_pagination.html" %}
+
+                </div>
+            </div>
+        </div>
 	</main>
 
 {% endblock %}

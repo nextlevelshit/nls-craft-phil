@@ -1,0 +1,33 @@
+{% if entry.jumbotron | length %}
+
+    <section class="jumbotron text-center">
+        <div class="container">
+
+        {% for block in entry.jumbotron %}
+
+            {% switch block.type %}
+
+                {% case "heading" %}
+                    <h1 class="jumbotron-heading">{{ block.text }}</h1>
+
+                {% case "body" %}
+                    <p class="lead text-muted">{{ block.text }}</p>
+
+                {% case "linkInternal" %}
+                    <a href="{{ block.target.first().url }}"
+                        class="btn btn-{{ block.class }}">{{ block.text }}</a>
+
+                {% case "linkExternal" %}
+                    <a href="{{ block.target }}"
+                        class="btn btn-{{ block.class }}"
+                        target="_blank">{{ block.text }}</a>
+
+
+            {% endswitch %}
+
+        {% endfor %}
+
+        </div>
+    </section>
+
+{% endif %}
