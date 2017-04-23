@@ -1,7 +1,61 @@
-{% extends "_master" %}
+{% extends "master" %}
 
 {% block content %}
+    <div class="container">
 
-	Page entry
+        <h2>{{ entry.title }}</h2>
 
+        {% for block in entry.blogEntry %}
+
+            <h3>
+                {{ block.type }}
+            </h3>
+
+            {% switch block.type %}
+
+                {% case "textOnly" %}
+
+                    <pre>block.text: {{ block.text | markdown }}</pre>
+
+                {% case "imageText" %}
+
+                    <div class="blog-imagetext blog-imagetext--{{ block.alignment }}">
+                        {% if block.image | length %}
+
+                            <pre>block.image: {{ block.image.getUrl() }}</pre>
+
+                        	{% set featuredImage = "" %}
+                        	{% set img_transform = {
+                        		mode: 'fit',
+                        		width: 752
+                        	} %}
+                        	{% for asset in entry.image %}
+                        		{% set featuredImage = asset.getUrl(img_transform) %}
+                        	{% endfor %}
+
+                        	<img src="{{featuredImage}}" alt="{{entry.title}}">
+
+                        {% endif %}
+
+                        <pre>block.alignment: {{ block.alignment }}</pre>
+                        <pre>block.text: {{ block.text | markdown }}</pre>
+                    </div>
+
+                {% case "subtitle" %}
+
+                    <div class="blog-subtitle {% if block.textColor %}blog-subtitle--inverted{% endif %}" style="background-color: {{ block.background }}">
+                        <pre>block.text: {{ block.text }}</pre>
+                        <pre>block.background: {{ block.background }}</pre>
+                        <pre>block.textColor: {{ block.textColor }}</pre>
+                    </div>
+
+                {% default %}
+
+                    <p>Bisher wurde kein Inhalt hinzugefügt.</p>
+
+            {% endswitch %}
+
+        {% endfor %}
+
+    </div>
 {% endblock %}

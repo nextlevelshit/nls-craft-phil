@@ -1,6 +1,45 @@
-<html>
-    <head></head>
-    <body>
-        Läuft bei dir
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    lang="de-DE">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+        <link rel="home"
+            href="{{ siteUrl }}" />
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab:300,400"
+            rel="stylesheet">
+        {% includeCssFile "assets/style.css" %}
+    </head>
+
+    <body class="nls-phil-body">
+        <header class="nls-phil-header">
+            <h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
+
+            <nav class="nls-phil-header-nav">
+                <ul class="nls-phil-header-nav-list">
+                    <li class="nls-phil-header-nav-list-item">
+                        <a href="#" class="nls-phil-header-nav-list-item-link">Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main role="main">
+
+            {% block content %}{% endblock %}
+
+        </main>
+
+        <footer class="nls-phil-footer">
+            Copyright 2017. All rights reserved • Built with <a href="http://craftcms.com">Craft</a>
+        </footer>
+
+        <pre>
+            {# {{ dump(entry) }} #}
+        </pre>
     </body>
+
 </html>

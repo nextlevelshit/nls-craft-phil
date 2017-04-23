@@ -1,0 +1,15 @@
+<nav class="nav">
+
+	<ul class="nav-list">
+
+		<li class="nav-list-item"><a href="{{siteUrl}}">Home</a></li>
+
+		{% set entries = craft.entries.section('page') %}
+		{% include "partials/_nav_with_children.html" %}
+
+		{% set entries = craft.categories.group('blogCatGroup') %}
+		{% include "partials/_nav_with_children.html" %}
+
+	</ul>
+
+</nav>
