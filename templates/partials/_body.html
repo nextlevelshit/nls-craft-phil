@@ -2,10 +2,6 @@
 
     {% for block in entry.body %}
 
-        <h3>
-            {{ block.type }}
-        </h3>
-
         {% switch block.type %}
 
             {% case "textOnly" %}
