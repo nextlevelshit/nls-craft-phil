@@ -1,0 +1,124 @@
+/*----------------------------------------------------------------
+ * Settings
+ *----------------------------------------------------------------
+ * Global variables, site-wide settings, config switches, etc.
+ */
+ @import 'settings.bootstrap-variables';
+
+/*----------------------------------------------------------------
+ * Generic
+ *----------------------------------------------------------------
+ *
+ * External packages and dependencies like boostrap etc.
+ */
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+/*----------------------------------------------------------------
+ * Base
+ *----------------------------------------------------------------
+ *
+ * Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+ */
+body {
+    min-height: 75rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    p {
+        margin-bottom: .25rem;
+    }
+}
+
+/*----------------------------------------------------------------
+ * Helper classes
+ *----------------------------------------------------------------
+ *
+ * Simple classes helpers (e.g. .fullheight {}).
+ */
+
+/*----------------------------------------------------------------
+ * Components
+ *----------------------------------------------------------------
+ *
+ * Discrete, complete chunks of UI (e.g. .carousel {}).
+ */
+ .featurette {
+     &-divider {
+         margin: 5rem 0;
+     }
+
+     &-cell {
+         display: flex;
+         justify-content: center;
+         flex-flow: column nowrap;
+     }
+
+     &-heading {
+         font-weight: 300;
+         line-height: 1;
+         letter-spacing: -.05rem;
+
+         @media (min-width: 40em) {
+             font-size: 50px;
+         }
+     }
+ }
+
+
+/*----------------------------------------------------------------
+ * Overrides
+ *----------------------------------------------------------------
+ *
+ * Discrete, complete chunks of UI (e.g. .carousel {}).
+ */
+.navbar {
+    margin-bottom: 0;
+}
+
+.jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-bottom: 0;
+    background-color: #fff;
+
+    &-heading {
+        font-weight: 300;
+    }
+
+    .container {
+        max-width: 40rem;
+    }
+
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.album {
+    min-height: 50rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 6rem;
+    background-color: #f7f7f7;
+}
+
+.card {
+    float: left;
+    width: 33.333%;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+
+    &-text {
+        font-size: 85%;
+    }
+
+    > img {
+        margin-bottom: .75rem;
+    }
+}

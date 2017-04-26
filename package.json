@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/nextlevelshit/nls-craft-phil/issues"
   },
-  "homepage": "https://github.com/nextlevelshit/nls-craft-phil#readme"
+  "homepage": "https://github.com/nextlevelshit/nls-craft-phil#readme",
+  "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0"
+  }
 }
