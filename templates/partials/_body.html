@@ -1,0 +1,81 @@
+{% if entry.body | length %}
+
+    {% for block in entry.body %}
+
+        <h3>
+            {{ block.type }}
+        </h3>
+
+        {% switch block.type %}
+
+            {% case "textOnly" %}
+
+                <pre>block.text: {{ block.text | markdown }}</pre>
+
+            {% case "imageText" %}
+
+                <div class="blog-imagetext blog-imagetext--{{ block.alignment }}">
+                    {% if block.image | length %}
+
+                        {# {% set featuredImage = "" %}
+                        {% set img_transform = {
+                            mode: 'fit',
+                            width: 752
+                        } %} #}
+
+                        {# {% set featuredImage = block.image.first().url %} #}
+
+                        {# <img src="{{featuredImage}}" alt="{{entry.title}}"> #}
+                        <div class="container">
+                            <hr class="featurette-divider">
+
+                            {% set rowClass = "" %}
+                            {% set textWrapperClass = "col-md-7" %}
+                            {% set imageWrapperClass = "col-md-5" %}
+                            {% set textClass = "" %}
+
+                            {% switch block.alignment %}
+
+                                {% case "right" %}
+
+                                    {% set rowClass = "flex-row-reverse" %}
+
+                                {% case "full" %}
+
+                                    {% set rowClass = "flex-column align-items-center" %}
+                                    {% set textWrapperClass = "col-md-6" %}
+                                    {% set imageWrapperClass = "col-md-8" %}
+                                    {% set textClass = "text-center" %}
+
+                            {% endswitch %}
+
+                            <div class="row featurette d-flex {{rowClass}}">
+                                <div class="featurette-cell {{textWrapperClass}}">
+                                    <h2 class="featurette-heading {{textClass}}">{{ block.heading }}</h2>
+                                    <p class="lead {{textClass}}">{{ block.text | markdown }}</p>
+                                </div>
+                                <div class="featurette-cell {{imageWrapperClass}}">
+                                    <img class="featurette-image img-fluid mx-auto" src="{{ block.image.first().getUrl() }}">
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+            {% case "subtitle" %}
+
+                <div class="blog-subtitle {% if block.textColor %}blog-subtitle--inverted{% endif %}" style="background-color: {{ block.background }}">
+                    <pre>block.text: {{ block.text }}</pre>
+                    <pre>block.background: {{ block.background }}</pre>
+                    <pre>block.textColor: {{ block.textColor }}</pre>
+                </div>
+
+            {% default %}
+
+                <p>Bisher wurde kein Inhalt hinzugefügt.</p>
+
+        {% endswitch %}
+
+    {% endfor %}
+
+{% endif %}

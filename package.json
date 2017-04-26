@@ -1,0 +1,19 @@
+{
+  "name": "nls-craft-phil",
+  "version": "1.0.0",
+  "description": "Website for Students Council Philosophy of University Stuttgart based on CraftCMS",
+  "main": "web/index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextlevelshit/nls-craft-phil.git"
+  },
+  "author": "Michael Czechowski <mail@dailysh.it>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nextlevelshit/nls-craft-phil/issues"
+  },
+  "homepage": "https://github.com/nextlevelshit/nls-craft-phil#readme"
+}
