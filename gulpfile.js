@@ -60,4 +60,4 @@ gulp.task('dev', gulp.parallel('sass:watch', 'scripts:watch'))
 
 gulp.task('build', gulp.series('sass', 'scripts'))
 
-gulp.task('default', gulp.series('dev'))
+gulp.task('default', gulp.series('build', 'dev'))
