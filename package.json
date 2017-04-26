@@ -4,6 +4,10 @@
   "description": "Website for Students Council Philosophy of University Stuttgart based on CraftCMS",
   "main": "web/index.php",
   "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "build:styles": "gulp sass",
+    "build:scripts": "gulp scripts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +22,7 @@
   "homepage": "https://github.com/nextlevelshit/nls-craft-phil#readme",
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.6",
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-browserify": "^0.5.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0"

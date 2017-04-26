@@ -20,7 +20,7 @@ var config = {
     }
 }
 
-gulp.task('sass', function() {
+gulp.task('sass', function(done) {
     var src = config.src.baseDir + config.src.stylesDir + config.src.stylesMainFile
 
     return gulp.src(src)
@@ -28,13 +28,16 @@ gulp.task('sass', function() {
         .pipe(sass().on('error', sass.logError))
         // .pipe(sourcemaps.write(config.dest.baseDir + config.dest.stylesDir))
         .pipe(gulp.dest(config.dest.baseDir + config.dest.stylesDir))
+    done()
 })
 
 gulp.task('sass:watch', function() {
-    gulp.watch(config.src.baseDir + config.src.stylesDir + '**/*.scss', ['sass'])
+    var src = config.src.baseDir + config.src.stylesDir + '**/*.scss'
+
+    gulp.watch(src).on('change', gulp.parallel('sass'));
 })
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function(done) {
     var src = config.src.baseDir + config.src.scriptsDir + config.src.scriptsMainFile
     var dest = config.dest.baseDir + config.dest.scriptsDir
     // Single entry point to browserify
@@ -44,8 +47,17 @@ gulp.task('scripts', function() {
             debug: true
         }))
         .pipe(gulp.dest(dest))
+    done()
 });
 
 gulp.task('scripts:watch', function() {
-    gulp.watch(config.src.baseDir + config.src.scriptsDir + '**/*.js', ['scripts'])
+    var src = config.src.baseDir + config.src.scriptsDir + '**/*.js'
+
+    gulp.watch(src).on('change', gulp.parallel('scripts'));
 })
+
+gulp.task('dev', gulp.parallel('sass:watch', 'scripts:watch'))
+
+gulp.task('build', gulp.series('sass', 'scripts'))
+
+gulp.task('default', gulp.series('dev'))
