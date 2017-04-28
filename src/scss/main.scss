@@ -45,27 +45,7 @@ footer {
  *
  * Discrete, complete chunks of UI (e.g. .carousel {}).
  */
- .featurette {
-     &-divider {
-         margin: 5rem 0;
-     }
-
-     &-cell {
-         display: flex;
-         justify-content: center;
-         flex-flow: column nowrap;
-     }
-
-     &-heading {
-         font-weight: 300;
-         line-height: 1;
-         letter-spacing: -.05rem;
-
-         @media (min-width: 40em) {
-             font-size: 50px;
-         }
-     }
- }
+@import "components.featurette";
 
 
 /*----------------------------------------------------------------
@@ -74,29 +54,11 @@ footer {
  *
  * Discrete, complete chunks of UI (e.g. .carousel {}).
  */
+ @import "overrides.jumbotron";
+ @import "overrides.card";
+
 .navbar {
     margin-bottom: 0;
-}
-
-.jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    margin-bottom: 0;
-    background-color: #fff;
-
-    &-heading {
-        font-weight: 300;
-    }
-
-    .container {
-        max-width: 40rem;
-    }
-
-    p {
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
 }
 
 .album {
@@ -105,20 +67,4 @@ footer {
     padding-bottom: 3rem;
     margin-top: 6rem;
     background-color: #f7f7f7;
-}
-
-.card {
-    float: left;
-    width: 33.333%;
-    padding: .75rem;
-    margin-bottom: 2rem;
-    border: 0;
-
-    &-text {
-        font-size: 85%;
-    }
-
-    > img {
-        margin-bottom: .75rem;
-    }
 }

@@ -1,0 +1,49 @@
+.featurette {
+  $shift-distance: 10rem;
+  $this-transition: ease-in-out 230ms 560ms;
+
+  overflow: hidden;
+
+  &--left {
+    &:hover {
+      img {
+        // transform: translateX($shift-distance);
+      }
+    }
+  }
+
+  &--right {
+    &:hover {
+      img {
+        // transform: translateX(-$shift-distance);
+      }
+    }
+  }
+
+  &--full {
+    &:hover {}
+  }
+
+  &-divider {
+    margin: 5rem 0;
+  }
+
+  &-cell {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+
+  &-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+    @media (min-width: 40em) {
+      font-size: 50px;
+    }
+  }
+
+  img {
+    transition: $this-transition;
+  }
+}

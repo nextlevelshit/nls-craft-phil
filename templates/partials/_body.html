@@ -25,7 +25,7 @@
                         <div class="container">
                             <hr class="featurette-divider">
 
-                            {% set rowClass = "" %}
+                            {% set rowClass = "featurette--left" %}
                             {% set textWrapperClass = "col-md-7" %}
                             {% set imageWrapperClass = "col-md-5" %}
                             {% set textClass = "" %}
@@ -34,11 +34,11 @@
 
                                 {% case "right" %}
 
-                                    {% set rowClass = "flex-row-reverse" %}
+                                    {% set rowClass = "featurette--right flex-row-reverse" %}
 
                                 {% case "full" %}
 
-                                    {% set rowClass = "flex-column align-items-center" %}
+                                    {% set rowClass = "featurette--full flex-column align-items-center" %}
                                     {% set textWrapperClass = "col-md-6" %}
                                     {% set imageWrapperClass = "col-md-8" %}
                                     {% set textClass = "text-center" %}
