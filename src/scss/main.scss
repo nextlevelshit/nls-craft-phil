@@ -4,15 +4,15 @@
  * Global variables, site-wide settings, config switches, etc.
  */
  @import 'settings.bootstrap-variables';
-
+ 
 /*----------------------------------------------------------------
  * Generic
  *----------------------------------------------------------------
  *
  * External packages and dependencies like boostrap etc.
  */
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
-
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/font-awesome/scss/font-awesome';
 /*----------------------------------------------------------------
  * Base
  *----------------------------------------------------------------

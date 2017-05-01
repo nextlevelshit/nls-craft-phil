@@ -1,0 +1,31 @@
+<div class="iconic">
+  <div class="container">
+
+    {% if entry.iconListing | length %}
+
+      <div class="row justify-content-md-center">
+
+        {% for block in entry.iconListing %}
+
+          {% if block.enabled %}
+
+            <div class="col">
+              <div class="iconic-item">
+                <div>
+                  <i class="iconic-item-icon {{block.icon.value}}"></i>
+                </div>
+                <div class="iconic-item-text">
+                  {{block.text}}
+                </div>
+              </div>
+            </div>
+
+          {% endif %}
+
+        {% endfor %}
+
+      </div>
+
+    {% endif %}
+  </div>
+</div>
