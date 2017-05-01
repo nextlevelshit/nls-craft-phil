@@ -54,9 +54,11 @@
             {% case "subtitle" %}
 
                 <div class="blog-subtitle {% if block.textColor %}blog-subtitle--inverted{% endif %}" style="background-color: {{ block.background }}">
-                    <pre>block.text: {{ block.text }}</pre>
-                    <pre>block.background: {{ block.background }}</pre>
-                    <pre>block.textColor: {{ block.textColor }}</pre>
+                  <div class="container">
+                    <div class="blog-subtitle-inner">
+                      {{ block.text }}
+                    </div>
+                  </div>
                 </div>
 
             {% default %}

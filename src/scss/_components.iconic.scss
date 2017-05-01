@@ -9,7 +9,7 @@
     &-icon {
       $this-background-color: $brand-primary;
 
-      margin: 2rem 0;
+      margin: 2rem 0 2.8rem;
 
       i {
         transform: scale(3);
@@ -24,6 +24,8 @@
       font-weight: 300;
       font-size: 2rem;
       letter-spacing: -0.05rem;
+      line-height: 1;
+      margin-bottom: 0.25rem;
     }
 
     &-text {

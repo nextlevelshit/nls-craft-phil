@@ -2,8 +2,14 @@
 
 {% block content %}
 
-	<div class="container">
-		{{ dump(entry) }} 
-	</div>
+    {% include "partials/_meta.html" %}
+
+    {% include "partials/_jumbotron.html" %}
+
+    {% include "partials/_iconic.html" %}
+
+    {% include "partials/_body.html" %}
+
+    {% include "partials/_next-entries.html" %}
 
 {% endblock %}

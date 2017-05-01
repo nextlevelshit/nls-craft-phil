@@ -4,16 +4,12 @@
 
     {% set entry = craft.entries.section("index").first() %}
 
-	<main role="main">
+    {% include "partials/_jumbotron.html" %}
 
-        {% include "partials/_jumbotron.html" %}
+    {% include "partials/_iconic.html" %}
 
-        {% include "partials/_iconic.html" %}
+    {% include "partials/_body.html" %}
 
-        {% include "partials/_body.html" %}
-
-        {% include "partials/_cards.html" %}
-
-	</main>
+    {% include "partials/_cards.html" %}
 
 {% endblock %}

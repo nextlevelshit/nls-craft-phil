@@ -49,8 +49,40 @@ footer {
  *
  * Discrete, complete chunks of UI (e.g. .carousel {}).
  */
+@import "components.blog";
 @import "components.featurette";
 @import "components.iconic";
+
+.nls-phil-header {
+  .show + .navbar {
+    .navbar-brand {
+      opacity: 0;
+    }
+  }
+
+  .navbar-brand {
+    transition: all 180ms;
+  }
+
+  ul {
+    li {
+      margin-bottom: 0.2rem;
+
+      a {
+        display: block;
+        border: 1px solid $gray;
+        padding: 0.05rem 0.5rem;
+        border-radius: $border-radius;
+
+        &:hover,
+        &:focus {
+          border-color: $gray-light;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
 
 
 /*----------------------------------------------------------------
