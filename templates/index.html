@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% set entry = craft.entries.section("index").first() %}
+    {% set entry = craft.entries.section("index").one() %}
 
     {% include "partials/_jumbotron.html" %}
 
