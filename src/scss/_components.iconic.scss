@@ -1,3 +1,34 @@
 .iconic {
-  
+  &-item {
+    &-icon,
+    &-title,
+    &-text {
+      text-align: center;
+    }
+
+    &-icon {
+      $this-background-color: $brand-primary;
+
+      margin: 2rem 0;
+
+      i {
+        transform: scale(3);
+        border: 0.5rem solid $this-background-color;
+        border-radius: 50%;
+        background: $this-background-color;
+        color: white;
+      }
+    }
+
+    &-title {
+      font-weight: 300;
+      font-size: 2rem;
+      letter-spacing: -0.05rem;
+    }
+
+    &-text {
+      font-weight: 300;
+      font-size: 1rem;
+    }
+  }
 }

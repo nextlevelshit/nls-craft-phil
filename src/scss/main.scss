@@ -4,7 +4,7 @@
  * Global variables, site-wide settings, config switches, etc.
  */
  @import 'settings.bootstrap-variables';
- 
+
 /*----------------------------------------------------------------
  * Generic
  *----------------------------------------------------------------
@@ -46,6 +46,7 @@ footer {
  * Discrete, complete chunks of UI (e.g. .carousel {}).
  */
 @import "components.featurette";
+@import "components.iconic";
 
 
 /*----------------------------------------------------------------
