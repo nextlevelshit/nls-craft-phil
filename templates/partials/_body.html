@@ -6,13 +6,15 @@
 
             {% case "textOnly" %}
 
-                <pre>block.text: {{ block.text | markdown }}</pre>
+                <div class="container">
+                  {{ block.text | markdown }}
+                </div>
 
             {% case "imageText" %}
 
                 <div class="blog-imagetext blog-imagetext--{{ block.alignment }}">
                     {% if block.image | length %}
-                    
+
                         <div class="container">
                             <hr class="featurette-divider">
 

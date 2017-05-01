@@ -10,8 +10,7 @@
             {% endif %}{{ siteName }}</title>
         <link rel="home" href="{{ siteUrl }}"/>
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab:300,400" rel="stylesheet">
-        {% do
-            view.registerCssFile("assets/css/main.css") %}
+        {% includeCssFile "/assets/css/main.css" %}
     </head>
 
     <body class="nls-phil-body">
@@ -25,20 +24,8 @@
                         </div>
                         <div class="col-sm-4 py-4">
                             <h4 class="text-white">Menü</h4>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="#" class="text-white">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-white">Arbeitskreise</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-white">Ethos</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-white">Kontakt</a>
-                                </li>
-                            </ul>
+
+                            {% include "partials/_navigation.html" %}
                         </div>
                     </div>
                 </div>
@@ -61,7 +48,8 @@
 
         {% include "partials/_footer.html" %}
 
-        <script src="assets/js/main.js"></script>
+        {% includeJsFile "assets/js/main.js" %}
+
     </body>
 
 </html>

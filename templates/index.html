@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% set entry = craft.entries.section('index').first() %}
+    {% set entry = craft.entries.section("index").first() %}
 
 	<main role="main">
 
@@ -12,21 +12,8 @@
 
         {% include "partials/_body.html" %}
 
-        <div class="album text-muted">
-            <div class="container">
-                <div class="row">
+        {% include "partials/_cards.html" %}
 
-                    {% paginate craft.entries.section('blog').limit(6) as info, entries %}
-
-                    {% for entry in entries %}
-                        {% include "partials/_entry_teaser.html" %}
-                    {% endfor %}
-
-                    {% include "partials/_pagination.html" %}
-
-                </div>
-            </div>
-        </div>
 	</main>
 
 {% endblock %}

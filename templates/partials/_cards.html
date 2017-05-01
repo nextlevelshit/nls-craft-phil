@@ -1,0 +1,17 @@
+<div class="album text-muted">
+    <div class="container">
+        <div class="row justify-content-md-center">
+
+            {% paginate craft.entries.section("blog").limit(3) as info, entries %}
+
+            {% for entry in entries %}
+                {% include "partials/_entry_teaser.html" %}
+            {% endfor %}
+
+        </div>
+
+        <div class="p-5 text-center">
+          <a href="/blog" class="btn btn-lg btn-primary">Alle Neuigkeiten lesen</a>
+        </div>
+    </div>
+</div>
