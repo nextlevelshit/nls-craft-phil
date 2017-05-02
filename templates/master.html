@@ -9,13 +9,13 @@
                 -
             {% endif %}{{ siteName }}</title>
         <link rel="home" href="{{ siteUrl }}"/>
-        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
         {% includeCssFile "/assets/css/main.css" %}
     </head>
 
     <body class="nls-phil-body">
         <header class="nls-phil-header">
-            <div class="collapse bg-inverse" id="navbarHeader">
+            <div class="nls-phil-header-collapse collapse bg-inverse" id="navbarHeader">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 py-4">
@@ -23,7 +23,7 @@
                             <p class="text-muted">{{menuText.textSimple}}</p>
                         </div>
                         <div class="col-sm-4 py-4">
-                            <h4 class="text-white">Menü</h4>
+                            <h4 class="nls-phil-header-collapse-menu text-white">Menü</h4>
 
                             {% include "partials/_navigation.html" %}
                         </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="navbar navbar-inverse bg-inverse">
                 <div class="container d-flex justify-content-between">
-                    <a href="{{ siteUrl }}" class="navbar-brand">{{ siteName }} {% if title is defined %}<span class="text-muted"> // {{ title }}</span>{% endif %}</a>
+                    <a href="{{ siteUrl }}" class="navbar-brand">{{ siteName }} {% if title is defined %}<span class="text-muted"><i> // {{ title }}</i></span>{% endif %}</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

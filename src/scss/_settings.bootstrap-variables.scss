@@ -96,12 +96,12 @@ $white:  #fff !default;
 $black:  #000 !default;
 $red:    #d9534f !default;
 $orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
+$yellow: #D9BB2D !default;
 $green:  #5cb85c !default;
 $blue:   #248C89 !default;
 $teal:   #5bc0de !default;
 $pink:   #ff5b77 !default;
-$purple: #613d7c !default;
+$purple: #7B3BAB !default;
 
 // Create grayscale
 $gray-dark:                 #292b2c !default;
@@ -111,7 +111,7 @@ $gray-lighter:              #aeaeae;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+$brand-primary:             $purple !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -183,7 +183,7 @@ $sizes: (
 
 $body-bg:       $white !default;
 $body-color:    $gray-dark !default;
-$inverse-bg:    $gray-dark !default;
+$inverse-bg:    $white !default;
 $inverse-color: $gray-lighter !default;
 
 
@@ -194,7 +194,7 @@ $inverse-color: $gray-lighter !default;
 $link-color:            $brand-primary !default;
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
-$link-hover-decoration: underline !default;
+$link-hover-decoration: none !default;
 
 
 // Grid breakpoints
@@ -244,8 +244,8 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif: "Roboto", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:      "Roboto Slab", Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
 
@@ -268,7 +268,7 @@ $font-size-h5: 1.25rem !default;
 $font-size-h6: 1rem !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
-$headings-font-family:   inherit !default;
+$headings-font-family:   $font-family-serif !default;
 $headings-font-weight:   500 !default;
 $headings-line-height:   1.1 !default;
 $headings-color:         inherit !default;

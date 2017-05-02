@@ -18,17 +18,38 @@ module.exports = function(dom) {
       modal.find('.modal-title').text(newTitle)
     }
 
+    var showNext = function () {
+      setImage(navigate(src).next().src)
+      setTitle(navigate(src).next().title)
+    }
+
+    var showPrev = function () {
+      setImage(navigate(src).prev().src)
+      setTitle(navigate(src).prev().title)
+    }
+
     setTitle(title)
     setImage(src)
 
     modal.find('.modal-image-next').click(function(event) {
-      setImage(navigate(src).next().src)
-      setTitle(navigate(src).next().title)
+      showNext();
     })
 
     modal.find('.modal-image-prev').click(function(event) {
-      setImage(navigate(src).prev().src)
-      setTitle(navigate(src).prev().title)
+      showPrev();
+    })
+
+
+
+    $('body').keydown(function(e) {
+      // left arrow
+      if ((e.keyCode || e.which) == 37) {
+        showPrev()
+      }
+      // right arrow
+      if ((e.keyCode || e.which) == 39) {
+        showNext()
+      }
     })
   })
 
