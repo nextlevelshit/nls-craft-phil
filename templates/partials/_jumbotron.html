@@ -15,13 +15,13 @@
                         <p class="lead text-muted">{{ block.text }}</p>
 
                     {% case "linkInternal" %}
-                        <a href="{{ block.target.first().url }}"
+                        <a href="{{ block.target.one() }}"
                             class="btn btn-{{ block.class }}">{{ block.text }}</a>
 
                     {% case "linkExternal" %}
                         <a href="{{ block.target }}"
                             class="btn btn-{{ block.class }}"
-                            target="_blank">{{ block.text }}</a>
+                            target="">{{ block.text }}</a>
 
                 {% endswitch %}
 
