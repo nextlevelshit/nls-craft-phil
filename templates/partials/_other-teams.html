@@ -1,0 +1,14 @@
+{% set teams = craft.entries.section("teams") %}
+
+<div class="album">
+  <div class="container">
+    <h3>Weitere Arbeitskreise</h3>
+    <div class="row">
+      {% for team in teams %}
+        <div class="col-md-4">
+            <a href="{{ team.url }}">{{ team.title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

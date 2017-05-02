@@ -2,6 +2,12 @@
     <li>
         <a href="{{siteUrl}}" class="text-white">Startseite</a>
     </li>
+    <li>
+        <a href="/arbeitskreise" class="text-white">Arbeitskreise</a>
+    </li>
+    <li>
+        <a href="/blog" class="text-white">Blog</a>
+    </li>
 
     {% set entries = craft.entries.section('pages') %}
     {% include "partials/_navigation-children.html" %}

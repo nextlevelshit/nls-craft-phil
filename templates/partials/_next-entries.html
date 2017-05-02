@@ -1,0 +1,16 @@
+<div class="container">
+  {# Set parameters for prev/next elements list #}
+  {% set params = craft.entries.section('blog').order('postDate asc') %}
+  {# Get the prev/next elements #}
+  {% set prevEntry = entry.getPrev(params) %}
+  {% set nextEntry = entry.getNext(params) %}
+
+  <div class="row pt-5">
+    <div class="col">
+      {% if prevEntry %}<a href="{{ prevEntry.url }}">« {{ prevEntry.title }}</a>{% endif %}
+    </div>
+    <div class="col text-right">
+      {% if nextEntry %}<a href="{{ nextEntry.url }}">{{ nextEntry.title }} »</a>{% endif %}
+    </div>
+  </div>
+</div>

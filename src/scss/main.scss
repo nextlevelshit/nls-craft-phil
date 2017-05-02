@@ -52,6 +52,7 @@ footer {
 @import "components.blog";
 @import "components.featurette";
 @import "components.iconic";
+@import "components.team";
 
 .nls-phil-header {
   .show + .navbar {
@@ -99,7 +100,6 @@ footer {
 }
 
 .album {
-    min-height: 50rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin-top: 6rem;

@@ -1,14 +1,12 @@
 {% extends "master" %}
 
-{% set title = "Arbeitskreise" %}
+{% set title = "Blog" %}
 
 {% block content %}
 
   <div class="container">
 
-    <h2 class="mb-5">Unsere Arbeitskreise</h2>
-
-    {% set entries = craft.entries.section("teams") %}
+    {% set entries = craft.entries.section("blog") %}
 
     {% for entry in entries %}
 

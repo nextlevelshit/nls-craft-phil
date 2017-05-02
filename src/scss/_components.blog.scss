@@ -1,0 +1,31 @@
+.blog {
+  &-meta {
+    font-weight: 500;
+    margin: 0.5rem 0;
+    color: $gray-lighter;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.08rem;
+  }
+
+  &-subtitle {
+    margin: 2rem 0;
+    padding: 3rem 0;
+
+    &-inner {
+      margin: 0 auto;
+      width: 80%;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: -0.05rem;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    &--inverted {
+      .blog-subtitle-inner {
+        color: white;
+      }
+    }
+  }
+}

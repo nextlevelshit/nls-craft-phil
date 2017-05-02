@@ -1,7 +1,5 @@
 {% extends "master" %}
 
-{% set title = entry.title %}
-
 {% block content %}
 
   {% include "partials/_jumbotron.html" %}
@@ -9,5 +7,7 @@
   {% include "partials/_iconic.html" %}
 
   {% include "partials/_body.html" %}
+
+  {% include "partials/_other-teams.html" %}
 
 {% endblock %}
