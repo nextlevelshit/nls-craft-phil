@@ -1,7 +1,9 @@
 {% extends "master.html" %}
 
+{% set title = "Bildergalerie" %}
+
 {% block content %}
 
-  {% include "partials/_gallery.html" with { images: craft.assets.kind("image") } %}
+  {% include "partials/_gallery_grouped.html" with { images: craft.assets.order("title").kind("image") } %}
 
 {% endblock %}

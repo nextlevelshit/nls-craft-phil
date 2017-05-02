@@ -4,30 +4,6 @@
 
 {% block content %}
 
-  <div class="container">
-
-    <h2 class="mb-5">Unsere Arbeitskreise</h2>
-
-    {% set entries = craft.entries.section("teams") %}
-
-    {% for entry in entries %}
-
-      <article class="nls-phil-team">
-        <div class="row">
-          <div class="col-md-7">
-            <h2 class="nls-phil-team-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-          </div>
-          <div class="col-md-5">
-            <a href="{{ entry.url }}" class="nls-phil-team-link btn btn-sm btn-secondary float-right">Erfahre mehr über {{ entry.title }}</a>
-          </div>
-          <div class="col-md-8">
-            <p class="nls-phil-team-description">{{ entry.teaser }}</p>
-          </div>
-        </div>
-      </article>
-
-    {% endfor %}
-
-  </div>
+    {% include "partials/_cards.html" with { items: craft.entries.section("teams") } %}
 
 {% endblock %}
