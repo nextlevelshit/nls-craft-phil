@@ -18,6 +18,6 @@ var actions = require('./modules/actions')
 
 // Initializing app modules
 $(document).ready(function() {
-    app.dom = dom();
-    app.actions = actions(app.dom);
+  app.dom = dom();
+  app.actions = actions(app.dom);
 });

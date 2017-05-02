@@ -10,7 +10,7 @@
 
     {% include "partials/_body.html" %}
 
-    {% include "partials/_gallery.html" %}
+    {% include "partials/_gallery.html" with { images: entry.gallery } %}
 
     {% include "partials/_next-entries.html" %}
 
