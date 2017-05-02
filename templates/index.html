@@ -9,7 +9,7 @@
     {% include "partials/_iconic.html" %}
 
     {% include "partials/_body.html" %}
-
-    {% include "partials/_cards.html" %}
+    
+    {% include "partials/_cards.html" with { items: craft.entries.section("blog").limit(6)} %}
 
 {% endblock %}

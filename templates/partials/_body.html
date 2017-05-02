@@ -1,72 +1,72 @@
 {% if entry.body | length %}
 
-    {% for block in entry.body %}
+  {% for block in entry.body %}
 
-        {% switch block.type %}
+    {% switch block.type %}
 
-            {% case "textOnly" %}
+    {% case "textOnly" %}
 
-                <div class="container">
-                  {{ block.text | markdown }}
-                </div>
+      <div class="container">
+        {{ block.text | markdown }}
+      </div>
 
-            {% case "imageText" %}
+      {% case "imageText" %}
 
-                <div class="blog-imagetext blog-imagetext--{{ block.alignment }}">
-                    {% if block.image | length %}
+        <div class="blog-imagetext blog-imagetext--{{ block.alignment }}">
+          {% if block.image | length %}
 
-                        <div class="container">
-                            <hr class="featurette-divider">
+            <div class="container">
+              <hr class="featurette-divider">
 
-                            {% set rowClass = "featurette--left" %}
-                            {% set textWrapperClass = "col-md-7" %}
-                            {% set imageWrapperClass = "col-md-5" %}
-                            {% set textClass = "" %}
+              {% set rowClass = "featurette--left" %}
+              {% set textWrapperClass = "col-md-7" %}
+              {% set imageWrapperClass = "col-md-5" %}
+              {% set textClass = "" %}
 
-                            {% switch block.alignment %}
+              {% switch block.alignment %}
 
-                                {% case "right" %}
+              {% case "right" %}
 
-                                    {% set rowClass = "featurette--right flex-row-reverse" %}
+                {% set rowClass = "featurette--right flex-row-reverse" %}
 
-                                {% case "full" %}
+                {% case "full" %}
 
-                                    {% set rowClass = "featurette--full flex-column align-items-center" %}
-                                    {% set textWrapperClass = "col-md-6" %}
-                                    {% set imageWrapperClass = "col-md-8" %}
-                                    {% set textClass = "text-center" %}
+                  {% set rowClass = "featurette--full flex-column align-items-center" %}
+                  {% set textWrapperClass = "col-md-6" %}
+                  {% set imageWrapperClass = "col-md-8" %}
+                  {% set textClass = "text-center" %}
 
-                            {% endswitch %}
+                  {% endswitch %}
 
-                            <div class="row featurette d-flex {{rowClass}}">
-                                <div class="featurette-cell {{textWrapperClass}}">
-                                    <h2 class="featurette-heading {{textClass}}">{{ block.heading }}</h2>
-                                    <p class="lead {{textClass}}">{{ block.text | markdown }}</p>
-                                </div>
-                                <div class="featurette-cell {{imageWrapperClass}}">
-                                    <img class="featurette-image img-fluid mx-auto" src="{{ block.image.first().getUrl() }}">
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-
-            {% case "subtitle" %}
-
-                <div class="blog-subtitle {% if block.textColor %}blog-subtitle--inverted{% endif %}" style="background-color: {{ block.background }}">
-                  <div class="container">
-                    <div class="blog-subtitle-inner">
-                      {{ block.text }}
+                  <div class="row featurette d-flex {{rowClass}}">
+                    <div class="featurette-cell {{textWrapperClass}}">
+                      <h2 class="featurette-heading {{textClass}}">{{ block.heading }}</h2>
+                      <p class="lead {{textClass}}">{{ block.text | markdown }}</p>
+                    </div>
+                    <div class="featurette-cell {{imageWrapperClass}}">
+                      <img class="featurette-image img-fluid mx-auto" src="{{ block.image.first().getUrl('imageToText') }}">
                     </div>
                   </div>
                 </div>
+              {% endif %}
+            </div>
 
-            {% default %}
+            {% case "subtitle" %}
 
-                <p>Bisher wurde kein Inhalt hinzugefügt.</p>
+              <div class="blog-subtitle {% if block.textColor %}blog-subtitle--inverted{% endif %}" style="background-color: {{ block.background }}">
+                <div class="container">
+                  <div class="blog-subtitle-inner">
+                    {{ block.text }}
+                  </div>
+                </div>
+              </div>
 
-        {% endswitch %}
+              {% default %}
 
-    {% endfor %}
+              <p>Bisher wurde kein Inhalt hinzugefügt.</p>
 
-{% endif %}
+              {% endswitch %}
+
+            {% endfor %}
+
+          {% endif %}
