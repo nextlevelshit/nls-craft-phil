@@ -9,17 +9,30 @@ module.exports = function(dom) {
     var modal = $(this)
     var image = modal.find('.modal-image')
 
-    modal.find('.modal-title').text(title)
-    image.attr('src', src)
-    image.click(function(event) {
-      navigate(title, src).next()
+    var setImage = function() {
+      image.attr('src', src)
+    }
+
+    var setTitle = function() {
+      modal.find('.modal-title').text(title)
+    }
+
+    setTitle()
+    setImage()
+
+    modal.find('.modal-image-next').click(function(event) {
+      src = navigate(title, src).next()
+      setImage()
+    })
+
+    modal.find('.modal-image-prev').click(function(event) {
+      src = navigate(title, src).prev()
+      setImage()
     })
   })
 
   $('#gallery').on('hidden.bs.modal', function(event) {
-    var modal = $(this)
-    var image = modal.find('.modal-image')
-    image.unbind('click')
+    $(this).find('.modal-image').unbind('click')
   })
 
   var navigate = function(title, src) {
@@ -32,7 +45,7 @@ module.exports = function(dom) {
           // parse key to integer to calculate next and previouse items order
           key = parseInt(key)
           var nextNum = (list.hasOwnProperty(key + 1)) ? key + 1 : 0
-          var prevNum = (list.hasOwnProperty(key - 1)) ? key - 1 : list.length
+          var prevNum = (list.hasOwnProperty(key - 1)) ? key - 1 : list.length - 1
 
           break
         }
@@ -40,11 +53,11 @@ module.exports = function(dom) {
     }
 
     return {
-      next: function () {
-        console.log('show next ' + $(list[nextNum]).data('src'))
+      next: function() {
+        return $(list[nextNum]).data('src')
       },
-      prev: function () {
-        console.log('show prev ' + $(list[prevNum]).data('src'))
+      prev: function() {
+        return $(list[prevNum]).data('src')
       }
     }
   }

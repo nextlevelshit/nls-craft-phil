@@ -1,0 +1,64 @@
+.modal {
+  &-body-inner {
+    position: relative;
+  }
+
+  &-image {
+    $this-background: rgba($gray-dark, 0.4), rgba($gray-dark, 0);
+
+    &-next,
+    &-prev {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 30%;
+      color: $white;
+      font-size: 3rem;
+      padding: 2rem;
+      transition: all 360ms;
+      cursor: pointer;
+
+      &:hover {
+        i {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      i {
+        text-shadow: 2px 2px 0 $gray-dark;
+        transition: all 360ms;
+        opacity: 0;
+      }
+    }
+
+    &-prev {
+      left: 0;
+
+      &:hover {
+        background: linear-gradient(90deg, $this-background);
+      }
+
+      i {
+        transform: translateX(-100%);
+      }
+    }
+
+    &-next {
+      right: 0;
+      justify-content: end;
+
+      &:hover {
+        background: linear-gradient(-90deg, $this-background);
+      }
+
+      i {
+        transform: translateX(100%);
+      }
+    }
+  }
+}
