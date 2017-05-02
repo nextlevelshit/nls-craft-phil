@@ -9,25 +9,26 @@ module.exports = function(dom) {
     var modal = $(this)
     var image = modal.find('.modal-image')
 
-    var setImage = function() {
-      image.attr('src', src)
+    var setImage = function(newSrc) {
+      image.attr('src', newSrc)
+      src = newSrc
     }
 
-    var setTitle = function() {
-      modal.find('.modal-title').text(title)
+    var setTitle = function(newTitle) {
+      modal.find('.modal-title').text(newTitle)
     }
 
-    setTitle()
-    setImage()
+    setTitle(title)
+    setImage(src)
 
     modal.find('.modal-image-next').click(function(event) {
-      src = navigate(title, src).next()
-      setImage()
+      setImage(navigate(src).next().src)
+      setTitle(navigate(src).next().title)
     })
 
     modal.find('.modal-image-prev').click(function(event) {
-      src = navigate(title, src).prev()
-      setImage()
+      setImage(navigate(src).prev().src)
+      setTitle(navigate(src).prev().title)
     })
   })
 
@@ -35,9 +36,9 @@ module.exports = function(dom) {
     $(this).find('.modal-image').unbind('click')
   })
 
-  var navigate = function(title, src) {
-    var list = $('[data-gallery="' + title + '"]')
-    var current = $('[data-gallery="' + title + '"][data-src="' + src + '"]')[0]
+  var navigate = function(src) {
+    var list = $('[data-gallery]')
+    var current = $('[data-gallery][data-src="' + src + '"]')[0]
 
     for (var key in list) {
       if (list.hasOwnProperty(key)) {
@@ -54,10 +55,16 @@ module.exports = function(dom) {
 
     return {
       next: function() {
-        return $(list[nextNum]).data('src')
+        return {
+          src: $(list[nextNum]).data('src'),
+          title: $(list[nextNum]).data('gallery')
+        }
       },
       prev: function() {
-        return $(list[prevNum]).data('src')
+        return {
+          src: $(list[prevNum]).data('src'),
+          title: $(list[prevNum]).data('gallery')
+        }
       }
     }
   }

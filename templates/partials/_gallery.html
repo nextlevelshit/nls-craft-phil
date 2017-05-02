@@ -2,9 +2,9 @@
   <div class="row">
     {% for image in images %}
       <div class="col-md-3">
-        <img src="{{ siteUrl }}/{{ image.getUrl() }}" alt="" class="img-fluid img-thumbnail mb-4"
+        <img src="{{ siteUrl }}{{ image.getUrl() }}" alt="" class="img-fluid img-thumbnail mb-4"
           data-gallery="{{image.title}}"
-          data-src="{{ siteUrl }}/{{ image.getUrl() }}"
+          data-src="{{ siteUrl }}{{ image.getUrl() }}"
           data-toggle="modal"
           data-target="#gallery">
       </div>
