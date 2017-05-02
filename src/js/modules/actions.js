@@ -18,14 +18,14 @@ module.exports = function(dom) {
       modal.find('.modal-title').text(newTitle)
     }
 
-    var showNext = function () {
-      setImage(navigate(src).next().src)
-      setTitle(navigate(src).next().title)
+    var showNext = function() {
+      setImage(navigate(src).next.src)
+      setTitle(navigate(src).next.title)
     }
 
-    var showPrev = function () {
-      setImage(navigate(src).prev().src)
-      setTitle(navigate(src).prev().title)
+    var showPrev = function() {
+      setImage(navigate(src).prev.src)
+      setTitle(navigate(src).prev.title)
     }
 
     setTitle(title)
@@ -75,17 +75,13 @@ module.exports = function(dom) {
     }
 
     return {
-      next: function() {
-        return {
-          src: $(list[nextNum]).data('src'),
-          title: $(list[nextNum]).data('gallery')
-        }
+      next: {
+        src: $(list[nextNum]).data('src'),
+        title: $(list[nextNum]).data('gallery')
       },
-      prev: function() {
-        return {
-          src: $(list[prevNum]).data('src'),
-          title: $(list[prevNum]).data('gallery')
-        }
+      prev: {
+        src: $(list[prevNum]).data('src'),
+        title: $(list[prevNum]).data('gallery')
       }
     }
   }
