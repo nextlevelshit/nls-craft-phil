@@ -32,7 +32,7 @@ gulp.task('sass', function(done) {
 })
 
 gulp.task('sass:watch', function() {
-    var src = config.src.baseDir + config.src.stylesDir + '**/*.scss'
+    var src = config.src.baseDir + config.src.stylesDir + '/**/*.scss'
 
     gulp.watch(src).on('change', gulp.parallel('sass'));
 })
@@ -51,7 +51,7 @@ gulp.task('scripts', function(done) {
 });
 
 gulp.task('scripts:watch', function() {
-    var src = config.src.baseDir + config.src.scriptsDir + '**/*.js'
+    var src = config.src.baseDir + config.src.scriptsDir + '/**/*.js'
 
     gulp.watch(src).on('change', gulp.parallel('scripts'));
 })
