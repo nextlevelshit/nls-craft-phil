@@ -47,6 +47,7 @@ footer {
  * Discrete, complete chunks of UI (e.g. .carousel {}).
  */
 @import "components.blog";
+@import "components.card";
 @import "components.featurette";
 @import "components.header";
 @import "components.iconic";
@@ -59,7 +60,6 @@ footer {
  * Discrete, complete chunks of UI (e.g. .carousel {}).
  */
 @import "overrides.jumbotron";
-@import "overrides.card";
 @import "overrides.modal";
 @import "overrides.navbar";
 

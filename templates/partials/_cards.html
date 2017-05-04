@@ -6,26 +6,26 @@
         {% for item in items %}
 
           <div class="col col-md-4">
-            <div class="card nls-phil-card">
+            <div class="nls-phil-card">
+              <div class="nls-phil-card-inner">
+                {% if item.image | length > 0 %}
+                  <img src="{{item.image.one().getUrl()}}" alt="{{ item.title }}" class="nls-phil-card-image">
+                {% endif %}
 
+                {% if item.postDate is null %}
+                  <div class="nls-phil-card-date">{{ item.postDate | date("d.m.Y") }}</div>
+                {% endif %}
 
-              {% if item.image | length > 0 %}
-                <img src="{{item.image.one().getUrl()}}" alt="{{ item.title }}">
-              {% endif %}
+                <h3 class="nls-phil-card-title">
+                  <a href="{{ item.url }}">{{ item.title }}</a>
+                </h3>
 
-              {% if item.postDate is null %}
-                <div class="nls-phil-card-date">{{ item.postDate | date("d.m.Y") }}</div>
-              {% endif %}
-
-              <h2 class="nls-phil-card-title">
-                <a href="{{ item.url }}">{{ item.title }}</a>
-              </h2>
-
-              {% if item.teaser is defined %}
-                <p class="card-text">
-                  {{ item.teaser }}
-                </p>
-              {% endif %}
+                {% if item.teaser is defined %}
+                  <p class="nls-phil-card-text">
+                    {{ item.teaser }}
+                  </p>
+                {% endif %}
+              </div>
             </div>
           </div>
 
