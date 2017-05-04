@@ -1,6 +1,8 @@
 <div class="container">
   <h2>{{entry.title}}</h2>
   <div class="blog-meta">
-    Veröffnetlicht am {{entry.postDate | date("d.n.Y")}} | von {{ entry.author.firstName ~ " " ~ entry.author.lastName}}
+    {% set author = entry.author ?: siteName %}
+
+    Veröffnetlicht am {{entry.postDate | date("d.n.Y")}} | von {{ author }}
   </div>
 </div>
