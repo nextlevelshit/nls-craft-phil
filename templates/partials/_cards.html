@@ -8,8 +8,9 @@
           <div class="col col-md-4">
             <div class="card nls-phil-card">
 
-              {% if item.image is not null %}
-                <img src="{{item.image.first().getUrl()}}" alt="{{ item.title }}">
+
+              {% if item.image | length > 0 %}
+                <img src="{{item.image.one().getUrl()}}" alt="{{ item.title }}">
               {% endif %}
 
               {% if item.postDate is null %}
