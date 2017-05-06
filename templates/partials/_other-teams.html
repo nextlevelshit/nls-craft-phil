@@ -2,12 +2,18 @@
 
 <div class="album">
   <div class="container">
-    <h3>Weitere Arbeitskreise</h3>
-    <div class="row">
+    <h3 class="mb-3">Weitere Arbeitskreise</h3>
+    <ul class="list-inline">
       {% for team in teams %}
-        <div class="col-md-4">
-            <a href="{{ team.url }}">{{ team.title }}</a>
-        </div>
+        {% if team.id == currentTeamId %}
+          {% set buttonClass = 'btn-primary disabled' %}
+        {% else %}
+          {% set buttonClass = 'btn-secondary' %}
+        {% endif %}
+
+        <li class="list-inline-item mb-2">
+          <a href="{{ team.url }}" class="btn {{ buttonClass }}">{{ team.title }}</a>
+        </li>
       {% endfor %}
     </div>
   </div>
