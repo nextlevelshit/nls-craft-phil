@@ -9,27 +9,36 @@ module.exports = function(dom) {
     var modal = $(this)
     var image = modal.find('.modal-image')
 
-    var setImage = function(newSrc) {
+    var setCurrentImage = function(newImage) {
+      var newSrc = (newImage) ? newImage.src : src
+      var newTitle = (newImage) ? newImage.title : title
+      var galleryEl = $('[data-gallery="' + newTitle + '"]')
+      var galleryTotal = galleryEl.length
+      var galleryCurrent = 1
+      var titleSuffix = ''
+
+      for (var i = 0; i < galleryTotal; i++) {
+        if ($(galleryEl[i]).data('src') == newSrc) {
+          var n = i + 1
+          titleSuffix = '(' + n + '/' + galleryTotal + ')'
+          break
+        }
+      }
+
+      modal.find('.modal-title').text(title + ' ' + titleSuffix)
       image.attr('src', newSrc)
       src = newSrc
     }
 
-    var setTitle = function(newTitle) {
-      modal.find('.modal-title').text(newTitle)
-    }
-
     var showNext = function() {
-      setImage(navigate(src).next.src)
-      setTitle(navigate(src).next.title)
+      setCurrentImage(navigate(src).next)
     }
 
     var showPrev = function() {
-      setImage(navigate(src).prev.src)
-      setTitle(navigate(src).prev.title)
+      setCurrentImage(navigate(src).prev)
     }
 
-    setTitle(title)
-    setImage(src)
+    setCurrentImage()
 
     modal.find('.modal-image-next').click(function(event) {
       showNext();
@@ -38,8 +47,6 @@ module.exports = function(dom) {
     modal.find('.modal-image-prev').click(function(event) {
       showPrev();
     })
-
-
 
     $('body').keydown(function(e) {
       // left arrow
