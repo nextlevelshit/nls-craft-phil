@@ -4,6 +4,17 @@
 
 {% block content %}
 
-    {% include "partials/_cards.html" with { items: craft.entries.section("teams") } %}
+  {% if teamsTitle is defined and teamsText is defined %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <h3>{{teamsTitle.textSimple}}</h3>
+          <p>{{teamsText.textSimple}}</p>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% include "partials/_cards.html" with {items: craft.entries.section("teams")} %}
 
 {% endblock %}

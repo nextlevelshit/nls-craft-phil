@@ -33,9 +33,11 @@
 
       </div>
 
-      <div class="p-5 text-center">
-        <a href="/blog" class="btn btn-lg btn-primary">Alle Neuigkeiten lesen</a>
-      </div>
+      {% if showAllButton is defined %}
+        <div class="p-5 text-center">
+          <a href="{{showAllButton.url}}" class="btn btn-lg btn-primary">{{showAllButton.title}}</a>
+        </div>
+      {% endif %}
     </div>
   </div>
 
