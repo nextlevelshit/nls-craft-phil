@@ -1,55 +1,64 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE">
 
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            {% if title is defined %}{{ title }}
-                -
-            {% endif %}{{ siteName }}</title>
-        <link rel="home" href="{{ siteUrl }}"/>
-        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
-        {% includeCssFile "/assets/css/main.css" %}
-    </head>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% if title is defined %}{{ title }}
+        -
+      {% endif %}{{ siteName }}</title>
+    <link rel="home" href="{{ siteUrl }}"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+    {% includeCssFile "/assets/css/main.css" %}
+  </head>
 
-    <body class="nls-phil-body">
-        <header class="nls-phil-header">
-            <div class="nls-phil-header-collapse collapse bg-inverse" id="navbarHeader">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 py-4">
-                            <h4 class="text-white">{{menuTitle.textSimple}}</h4>
-                            <p class="text-muted">{{menuText.textSimple}}</p>
-                        </div>
-                        <div class="col-sm-4 py-4">
-                            <h4 class="nls-phil-header-collapse-menu text-white">Menü</h4>
-
-                            {% include "partials/_navigation.html" %}
-                        </div>
-                    </div>
-                </div>
+  <body class="nls-phil-body">
+    <header class="nls-phil-header bg-inverse">
+      <div class="nls-phil-header-collapse collapse" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 push-md-7 col-lg-4 push-lg-8 py-4">
+              <h4 class="nls-phil-header-collapse-menu text-white">Menü</h4>
+              {% include "partials/_navigation.html" %}
             </div>
-            <div class="navbar navbar-inverse bg-inverse">
-                <div class="container d-flex justify-content-between">
-                    <a href="{{ siteUrl }}" class="navbar-brand">{{ siteName }} {% if title is defined %}<span class="text-muted"> // {{ title }}</span>{% endif %}</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
+            <div class="col-md-7 pull-md-5 col-lg-8 pull-lg-4 py-4">
+              <h4 class="text-white">{{menuTitle.textSimple}}</h4>
+              <p class="text-muted">{{menuText.textSimple}}</p>
             </div>
-        </header>
+          </div>
+        </div>
+      </div>
 
-        <main role="main">
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          <div class="d-flex justify-content-between">
+            <a href="{{ siteUrl }}" class="navbar-brand">
+              {{ siteName }}
+              {% if title is defined %}
+                <span class="text-muted hidden-sm-down">
+                  //
+                  {{ title }}</span>
+              {% endif %}
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
 
-            {% block content %}{% endblock %}
+    <main role="main">
 
-        </main>
+      {% block content %}{% endblock %}
 
-        {% include "partials/_footer.html" %}
+    </main>
 
-        {% includeJsFile "/assets/js/main.js" %}
+    {% include "partials/_footer.html" %}
 
-    </body>
+    {% includeJsFile "/assets/js/main.js" %}
+
+  </body>
 
 </html>

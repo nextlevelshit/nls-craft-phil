@@ -15,7 +15,11 @@
       border-radius: $border-radius;
     }
 
-    &-title {}
+    &-title {
+      a {
+        hyphens: auto;
+      }
+    }
 
     &-image {
       display: block;
