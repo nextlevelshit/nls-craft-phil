@@ -7,3 +7,4 @@
 /node_modules
 /storage
 *.log
+/config/license.key
