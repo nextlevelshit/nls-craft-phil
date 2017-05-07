@@ -10,6 +10,6 @@
 
     {% include "partials/_body.html" %}
 
-    {% include "partials/_cards.html" with { items: craft.entries.section("blog").limit(6), showAllButton:  { url: '/blog', title: 'Alle Einträge anzeigen' }, itemsTitle: "Neuigkeiten aus dem Blog" } %}
+    {% include "partials/_cards.html" with { items: craft.entries.section("blog").limit(6), showDate: true, showAllButton:  { url: '/blog', title: 'Alle Einträge anzeigen' }, itemsTitle: "Neuigkeiten aus dem Blog" } %}
 
 {% endblock %}

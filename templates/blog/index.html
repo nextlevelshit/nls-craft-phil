@@ -6,6 +6,6 @@
 
     {% paginate craft.entries.section("blog").limit(2) as blogInfo, blogEntries %}
 
-    {% include "partials/_cards.html" with { items: blogEntries, width: 'full', itemsInfo: blogInfo } %}
+    {% include "partials/_cards.html" with { items: blogEntries, width: 'full', itemsInfo: blogInfo, showDate: true } %}
 
 {% endblock %}

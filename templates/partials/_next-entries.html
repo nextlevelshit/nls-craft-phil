@@ -12,12 +12,12 @@
       <div class="col-md-4">
 
         {% if prevEntry %}
-          {% include "partials/_card_item.html" with {item: prevEntry} %}
+          {% include "partials/_cards_item.html" with {item: prevEntry} %}
         {% endif %}
       </div>
       <div class="col-md-4">
         {% if nextEntry %}
-          {% include "partials/_card_item.html" with {item: nextEntry} %}
+          {% include "partials/_cards_item.html" with {item: nextEntry} %}
         {% endif %}
       </div>
     </div>

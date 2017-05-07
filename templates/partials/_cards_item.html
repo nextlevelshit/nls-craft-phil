@@ -5,8 +5,10 @@
         <img src="{{siteUrl}}{{item.image.one().getUrl()}}" alt="{{ item.title }}" class="nls-phil-card-image">
       {% endif %}
 
-      {% if item.postDate is not null %}
-        <div class="nls-phil-card-date">{{ item.postDate | date("d.m.Y H:i") }} <i class="fa fa-clock-o"></i></div>
+      {% if showDate is defined %}
+        {% if showDate == true %}
+          <div class="nls-phil-card-date">{{ item.postDate | date("d.m.Y H:i") }} <i class="fa fa-clock-o"></i></div>
+        {% endif %}
       {% endif %}
 
       <h3 class="nls-phil-card-title" lang="de">
