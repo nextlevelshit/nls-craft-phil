@@ -1,0 +1,25 @@
+{% if item is defined %}
+  <div class="nls-phil-card">
+    <div class="nls-phil-card-inner">
+      {% if item.image | length > 0 %}
+        <img src="{{siteUrl}}{{item.image.one().getUrl()}}" alt="{{ item.title }}" class="nls-phil-card-image">
+      {% endif %}
+
+      {% if item.postDate is not null %}
+        <div class="nls-phil-card-date">{{ item.postDate | date("d.m.Y H:i") }} <i class="fa fa-clock-o"></i></div>
+      {% endif %}
+
+      <h3 class="nls-phil-card-title" lang="de">
+        {{ item.title }}
+      </h3>
+
+      {% if item.teaser is defined %}
+        <p class="nls-phil-card-text" lang="de">
+          {{ item.teaser }}
+        </p>
+      {% endif %}
+
+      <a href="{{ item.url }}" class="nls-phil-card-link"></a>
+    </div>
+  </div>
+{% endif %}

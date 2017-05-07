@@ -1,16 +1,26 @@
-<div class="container">
-  {# Set parameters for prev/next elements list #}
-  {% set params = craft.entries.section('blog').order('postDate asc') %}
-  {# Get the prev/next elements #}
-  {% set prevEntry = entry.getPrev(params) %}
-  {% set nextEntry = entry.getNext(params) %}
+<div class="album">
+  <div class="container">
+    {# Set parameters for prev/next elements list #}
+    {% set params = craft.entries.section('blog').order('postDate asc') %}
+    {# Get the prev/next elements #}
+    {% set prevEntry = entry.getPrev(params) %}
+    {% set nextEntry = entry.getNext(params) %}
 
-  <div class="row pt-5">
-    <div class="col">
-      {% if prevEntry %}<a href="{{ prevEntry.url }}">« {{ prevEntry.title }}</a>{% endif %}
-    </div>
-    <div class="col text-right">
-      {% if nextEntry %}<a href="{{ nextEntry.url }}">{{ nextEntry.title }} »</a>{% endif %}
+    <h3>Weitere Einträge, die dich interessieren könnten</h3>
+
+    <div class="row pt-5">
+      <div class="col-md-4">
+
+        {% if prevEntry %}
+          {% include "partials/_card_item.html" with {item: prevEntry} %}
+        {% endif %}
+      </div>
+      <div class="col-md-4">
+        {% if nextEntry %}
+          {% include "partials/_card_item.html" with {item: nextEntry} %}
+        {% endif %}
+      </div>
     </div>
   </div>
+
 </div>
