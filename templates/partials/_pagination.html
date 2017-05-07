@@ -1,15 +1,23 @@
-<div class="clearfix">
-
-	<div class="prev_page">
-		{% if info.prevUrl %}
-		    <a href="{{info.prevUrl}}" class="underline_from_right">&larr; Previous Page</a>
-		{% endif %}
+<div class="nls-phil-pagination">
+	<div class="row">
+		<div class="col">
+      {% if info.prevUrl %}
+  			<div class="nls-phil-pagination-prev">
+  			    <a href="{{info.prevUrl}}" class="nls-phil-pagination-link btn btn-secondary {% if info.prevUrl is not defined %}disabled{% endif %}"><i class="fa fa-angle-left"></i> Vorherige Seite</a>
+  			</div>
+      {% endif %}
+		</div>
+		<div class="col">
+			<div class="nls-phil-pagination-overview text-center">
+			  Seite	{{info.first}} von {{info.total}}
+		  </div>
+		</div>
+		<div class="col">
+      {% if info.nextUrl %}
+  			<div class="nls-phil-pagination-next">
+  			    <a href="{{info.nextUrl}}" class="nls-phil-pagination-link btn btn-secondary {% if info.nextUrl is not defined %}disabled{% endif %}">Nächste Seite <i class="fa fa-angle-right"></i></a>
+  			</div>
+      {% endif %}
+		</div>
 	</div>
-
-	<div class="next_page">
-		{% if info.nextUrl %}
-		    <a href="{{info.nextUrl}}" class="underline_from_left">Next Page &rarr;</a>
-		{% endif %}
-	</div>
-
 </div>

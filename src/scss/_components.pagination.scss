@@ -1,0 +1,19 @@
+.nls-phil {
+  &-pagination {
+    display: block;
+    margin: 2rem 0;
+
+    &-overview {
+      text-align: center;
+    }
+
+    &-prev {}
+
+    &-next {
+      float: right;
+    }
+
+    &-link {
+    }
+  }
+}

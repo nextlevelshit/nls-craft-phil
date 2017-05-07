@@ -1,7 +1,15 @@
 {% if items is defined %}
   <div class="album text-muted">
     <div class="container">
-      <div class="row justify-content-md-center">
+      {% if itemsTitle is defined %}
+        <h2 class="mb-5">{{itemsTitle}}</h2>
+      {% endif %}
+
+      {% if itemsInfo is defined %}
+        {% include "partials/_pagination.html" with { info: itemsInfo } %}
+      {% endif %}
+
+      <div class="row">
 
         {% for item in items %}
 
@@ -12,19 +20,21 @@
                   <img src="{{item.image.one().getUrl()}}" alt="{{ item.title }}" class="nls-phil-card-image">
                 {% endif %}
 
-                {% if item.postDate is null %}
-                  <div class="nls-phil-card-date">{{ item.postDate | date("d.m.Y") }}</div>
+                {% if item.postDate is not null %}
+                  <div class="nls-phil-card-date">{{ item.postDate | date("d.m.Y H:i") }} <i class="fa fa-clock-o"></i></div>
                 {% endif %}
 
-                <h3 class="nls-phil-card-title">
-                  <a href="{{ item.url }}" lang="de">{{ item.title }}</a>
+                <h3 class="nls-phil-card-title" lang="de">
+                  {{ item.title }}
                 </h3>
 
                 {% if item.teaser is defined %}
-                  <p class="nls-phil-card-text">
+                  <p class="nls-phil-card-text" lang="de">
                     {{ item.teaser }}
                   </p>
                 {% endif %}
+
+                <a href="{{ item.url }}" class="nls-phil-card-link"></a>
               </div>
             </div>
           </div>
@@ -37,6 +47,10 @@
         <div class="p-5 text-center">
           <a href="{{showAllButton.url}}" class="btn btn-lg btn-primary">{{showAllButton.title}}</a>
         </div>
+      {% endif %}
+
+      {% if itemsInfo is defined %}
+        {% include "partials/_pagination.html" with { info: itemsInfo } %}
       {% endif %}
     </div>
   </div>

@@ -24,7 +24,7 @@
         {% endif %}
 
         <div class="col-6 col-md-3">
-          <img src="{{ image.getUrl('cubic') }}" alt="" class="img-fluid img-thumbnail mb-4" data-gallery="{{image.getFolder().name}}" data-src="{{ siteUrl }}{{ image.getUrl() }}" data-toggle="modal" data-target="#gallery">
+          <img src="{{siteUrl}}{{ image.getUrl('cubic') }}" alt="" class="img-fluid img-thumbnail mb-4" data-gallery="{{siteUrl}}{{image.getFolder().name}}" data-src="{{ siteUrl }}{{ image.getUrl() }}" data-toggle="modal" data-target="#gallery">
         </div>
       {% endfor %}
 
