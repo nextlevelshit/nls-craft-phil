@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    {% paginate craft.entries.section("blog").limit(2) as blogInfo, blogEntries %}
+    {% paginate craft.entries.section("blog").limit(9) as blogInfo, blogEntries %}
 
     {% include "partials/_cards.html" with { items: blogEntries, width: 'full', itemsInfo: blogInfo, showDate: true } %}
 
