@@ -94,11 +94,11 @@
 // Start with assigning color names to specific hex values.
 $white:  #fff !default;
 $black:  #000 !default;
-$red:    #99444B !default;
+$red:    #DB5560;//#99444B !default;
 $orange: #f0ad4e !default;
 $yellow: #D9BB2D !default;
 $green:  #24847A !default;
-$blue:   #248C89 !default;
+$blue:   #388ABF;//#248C89 !default;
 $teal:   #5bc0de !default;
 $pink:   #ff5b77 !default;
 $purple: #7B3BAB !default;
@@ -111,7 +111,7 @@ $gray-lighter:              #aeaeae !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $green !default;
+$brand-primary:             $red !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -231,7 +231,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:               12 !default;
-$grid-gutter-width-base:     30px !default;
+$grid-gutter-width-base:     16px !default;
 $grid-gutter-widths: (
   xs: $grid-gutter-width-base,
   sm: $grid-gutter-width-base,

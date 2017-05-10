@@ -39,51 +39,13 @@
           }
         }
 
-        &:nth-child(0) {
-          a {
-            transition-delay: 0;
-          }
-        }
+        $this-delay: 100ms;
 
-        &:nth-child(1) {
-          a {
-            transition-delay: 100ms;
-          }
-        }
-
-        &:nth-child(2) {
-          a {
-            transition-delay: 200ms;
-          }
-        }
-
-        &:nth-child(3) {
-          a {
-            transition-delay: 300ms;
-          }
-        }
-
-        &:nth-child(4) {
-          a {
-            transition-delay: 400ms;
-          }
-        }
-
-        &:nth-child(5) {
-          a {
-            transition-delay: 500ms;
-          }
-        }
-
-        &:nth-child(6) {
-          a {
-            transition-delay: 600ms;
-          }
-        }
-
-        &:nth-child(7) {
-          a {
-            transition-delay: 700ms;
+        @for $i from 0 through 10 {
+          &:nth-child(#{$i}) {
+            a {
+              transition-delay: $i * $this-delay;
+            }
           }
         }
       }

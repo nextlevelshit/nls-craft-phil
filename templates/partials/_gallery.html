@@ -2,7 +2,7 @@
   <div class="row">
     {% for image in images %}
       <div class="col-6 col-md-3">
-        <img src="{{siteUrl}}{{ image.getUrl('cubic') }}" alt="" class="img-fluid img-thumbnail mb-4"
+        <img src="{{siteUrl}}{{ image.getUrl('cubic') }}" alt="" class="img-fluid img-thumbnail mb-2"
           data-gallery="{{image.title}}"
           data-src="{{siteUrl}}{{ image.getUrl() }}"
           data-toggle="modal"

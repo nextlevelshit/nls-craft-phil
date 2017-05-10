@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  margin: 2rem 0;
+  // margin: 2rem 0;
 }
 
 footer {
@@ -69,4 +69,8 @@ footer {
   padding-bottom: 3rem;
   margin-top: 6rem;
   background-color: #f7f7f7;
+}
+
+.img-thumbnail {
+  padding: 0;
 }

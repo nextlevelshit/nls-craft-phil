@@ -64,6 +64,19 @@ module.exports = function(dom) {
     $(this).find('.modal-image').unbind('click')
   })
 
+  $('#gallery').on('show.bs.modal', function(event) {
+    console.log('test')
+    $(this).css({display: 'flex'});
+  })
+
+  // $('#gallery').on('hide.bs.modal', function(event) {
+  //   $(this).css({display: 'flex'});
+  // })
+
+  $('#gallery').on('shown.bs.modal', function(event) {
+    $(this).css({display: 'flex'});
+  })
+
   var navigate = function(src) {
     var list = $('[data-gallery]')
     var current = $('[data-gallery][data-src="' + src + '"]')[0]

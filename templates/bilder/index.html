@@ -4,6 +4,8 @@
 
 {% block content %}
 
-  {% include "partials/_gallery_grouped.html" with { images: craft.assets.order("title").kind("image") } %}
+  <div class="mt-5">
+    {% include "partials/_gallery_grouped.html" with { images: craft.assets.order("title").kind("image") } %}
+  </div>
 
 {% endblock %}

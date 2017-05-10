@@ -4,6 +4,7 @@
 
 {% block content %}
 
+  <div class="blog">
     {% include "partials/_meta.html" %}
 
     {% include "partials/_jumbotron.html" %}
@@ -12,8 +13,9 @@
 
     {% include "partials/_body.html" %}
 
-    {% include "partials/_gallery.html" with { images: entry.gallery } %}
+    {% include "partials/_gallery.html" with {images: entry.gallery} %}
 
     {% include "partials/_next-entries.html" %}
+  </div>
 
 {% endblock %}

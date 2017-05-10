@@ -1,34 +1,32 @@
 {% if entry.jumbotron | length %}
 
-    <section class="jumbotron text-center">
-        <div class="container">
-
+  <section class="jumbotron">
+    <div class="container">
+      <div class="jumbotron-inner">
         {% for block in entry.jumbotron %}
-            {% if block.enabled %}
+          {% if block.enabled %}
 
-                {% switch block.type %}
+            {% switch block.type %}
 
-                    {% case "heading" %}
-                        <h1 class="jumbotron-heading">{{ block.text }}</h1>
+            {% case "heading" %}
+              <h1 class="jumbotron-heading">{{ block.text }}</h1>
 
-                    {% case "body" %}
-                        <p class="lead text-muted">{{ block.text }}</p>
+              {% case "body" %}
+                <p class="lead">{{ block.text }}</p>
 
-                    {% case "linkInternal" %}
-                        <a href="{{ block.target.one() }}"
-                            class="btn btn-{{ block.class }}">{{ block.text }}</a>
+                {% case "linkInternal" %}
+                  <a href="{{ block.target.one() }}" class="btn btn-{{ block.class }}">{{ block.text }}</a>
 
-                    {% case "linkExternal" %}
-                        <a href="{{ block.target }}"
-                            class="btn btn-{{ block.class }}"
-                            target="">{{ block.text }}</a>
+                  {% case "linkExternal" %}
+                    <a href="{{ block.target }}" class="btn btn-{{ block.class }}" target="">{{ block.text }}</a>
 
-                {% endswitch %}
+                    {% endswitch %}
 
-            {% endif %}
+                  {% endif %}
 
-        {% endfor %}
-        </div>
-    </section>
+                {% endfor %}
+              </div>
+            </div>
+          </section>
 
-{% endif %}
+        {% endif %}
