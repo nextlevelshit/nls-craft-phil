@@ -44,7 +44,7 @@
                       <p class="lead {{textClass}}">{{ block.text | markdown }}</p>
                     </div>
                     <div class="featurette-cell {{imageWrapperClass}}">
-                      <img class="featurette-image img-fluid mx-auto" src="{{ block.image.first().getUrl('imageToText') }}">
+                      <img class="featurette-image img-fluid mx-auto" src="{{siteUrl}}{{ block.image.first().getUrl('imageToText') }}">
                     </div>
                   </div>
                 </div>
