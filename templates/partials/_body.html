@@ -19,15 +19,16 @@
               <hr class="featurette-divider">
 
               {% set rowClass = "featurette--left" %}
-              {% set textWrapperClass = "col-md-7" %}
+              {% set textWrapperClass = "col-md-7 pr-5" %}
               {% set imageWrapperClass = "col-md-5" %}
               {% set textClass = "" %}
 
               {% switch block.alignment %}
 
-              {% case "left" %}
+                {% case "left" %}
 
-                {% set rowClass = "featurette--right flex-row-reverse" %}
+                  {% set rowClass = "featurette--right flex-row-reverse" %}
+                  {% set textWrapperClass = "col-md-7 pl-5" %}
 
                 {% case "full" %}
 

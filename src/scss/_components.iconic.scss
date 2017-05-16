@@ -1,12 +1,14 @@
 .iconic {
-  margin-top: 5rem;
+  $this-gutter: 1rem;
+
+  margin: 5rem (- $this-gutter / 2) 0;
 
   &-item {
     margin-bottom: 4rem;
+    padding: 0 $this-gutter;
 
     &-icon,
-    &-title,
-    &-text {
+    &-title {
       text-align: center;
     }
 
@@ -30,11 +32,14 @@
       letter-spacing: -0.05rem;
       line-height: 1;
       margin-bottom: 0.25rem;
+      hyphens: auto;
     }
 
     &-text {
       font-weight: 300;
       font-size: 1rem;
+      align: justify;
+      hyphens: auto;
     }
   }
 }

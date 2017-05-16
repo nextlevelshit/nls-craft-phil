@@ -6,7 +6,42 @@
 
 {% block content %}
 
-  <div class="container">
+  <div class="container mt-5">
+    <h1>{{entry.title}}</h1>
+
+    {% set infos = [] %}
+    {% if entry.responsible %}
+      {% set infos = infos | merge({'Ansprechpartner*in': entry.responsible}) %}
+    {% endif %}
+    {% if entry.contact %}
+      {% set infos = infos | merge({'Kontaktmöglichkeit': entry.contact}) %}
+    {% endif %}
+    {% if entry.meetings %}
+      {% set infos = infos | merge({'Regelmäßige Treffen': entry.meetings}) %}
+    {% endif %}
+
+    {% if infos | length() %}
+      <div class="mt-3">
+        {% for label, content in infos %}
+          <dl class="row">
+            <dt class="col-sm-3 col-md-2">
+              {{ label }}:
+            </dt>
+            <dd class="col-sm-9 col-md-6">
+              {{ content }}
+            </dd>
+          </dl>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if entry.teaser %}
+      <div class="row">
+        <div class="col-md-9">
+          {{ entry.teaser }}
+        </div>
+      </div>
+    {% endif %}
 
   </div>
 

@@ -6,7 +6,7 @@
     <ul class="list-inline">
       {% for team in teams %}
         {% if team.id == currentTeamId %}
-          {% set buttonClass = 'btn-primary disabled' %}
+          {% set buttonClass = 'btn-primary' %}
         {% else %}
           {% set buttonClass = 'btn-secondary' %}
         {% endif %}

@@ -1,8 +1,8 @@
-<div class="iconic">
-  <div class="container">
+<div class="container">
 
-    {% if entry.iconListing | length %}
+  {% if entry.iconListing | length %}
 
+    <div class="iconic">
       <div class="row justify-content-md-center">
 
         {% for block in entry.iconListing %}
@@ -14,10 +14,10 @@
                 <div class="iconic-item-icon">
                   <i class="{{block.icon.value}}"></i>
                 </div>
-                <div class="iconic-item-title">
+                <div class="iconic-item-title" lang="de">
                   {{block.heading}}
                 </div>
-                <div class="iconic-item-text">
+                <div class="iconic-item-text" land="de">
                   {{block.text}}
                 </div>
               </div>
@@ -28,7 +28,7 @@
         {% endfor %}
 
       </div>
+    </div>
 
-    {% endif %}
-  </div>
+  {% endif %}
 </div>
