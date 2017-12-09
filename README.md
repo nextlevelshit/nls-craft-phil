@@ -3,10 +3,26 @@ Website for Students Council Philosophy of University Stuttgart based on CraftCM
 
 # Installation
 
+## Install Composer
+
+https://getcomposer.org/download/
+
+## Install Composer dependencies
+
+```bash
+composer install
+```
+
 ## Install node package dependencies
 ```bash
 npm i
 ```
+## Install gulp globally
+
+```bash
+npm install gulpjs/gulp-cli -g
+```
+
 
 ## Copy fonts to public directory
 ```bash
