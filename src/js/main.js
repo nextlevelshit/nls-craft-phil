@@ -9,7 +9,9 @@ var app = global.app
 var $ = require('jquery')
 global.jQuery = global.$ = $
 global.Tether = require('tether')
+global.Popper = require('popper.js')
 global.bootstrap = require('bootstrap')
+//global.Popper = require('popper.js')
 
 
 // Including app modules

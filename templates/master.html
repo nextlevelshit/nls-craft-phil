@@ -14,7 +14,7 @@
   </head>
 
   <body class="nls-phil-body">
-    <header class="nls-phil-header bg-inverse">
+    <header class="nls-phil-header bg-dark">
       <div class="nls-phil-header-collapse collapse" id="navbarHeader">
         <div class="container">
           <div class="row">
@@ -31,7 +31,7 @@
       </div>
 
       <div class="container">
-        <div class="navbar navbar-inverse">
+        <div class="navbar navbar-dark bg-dark">
           <div class="d-flex justify-content-between">
             <a href="{{ siteUrl }}" class="navbar-brand">
               {{ siteName }}
@@ -41,7 +41,7 @@
                   {{ title }}</span>
               {% endif %}
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" data-toggle="tooltip" data-placement="bottom" title="Navigation öffnen">
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
